@@ -19,10 +19,10 @@ const userController = {
         select: '-__v'
       })
       .select('-__v')
-      .populate({
-        Path: 'friends',
-        select: '-__v'
-      })
+      // .populate({
+      //   Path: 'friends',
+      //   select: '-__v'
+      // })
       .select('-__v')
       .then(dbUserData => res.json(dbUserData))
       .catch(err => {

@@ -14,14 +14,23 @@ const UserSchema = new Schema(
       unique: true,
       match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
     },
-    thoughts: {
-      thoughts: [ThoughtSchema]
-    },
-    friends: []
+    thoughts: [
+      {
+        type:Schema.Types.ObjectId,
+        ref: "Thoughts",
+      }
+    ],
+    friends: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+      }
+    ]
   },
   {
     toJSON: {
-      virtuals: true
+      virtuals: true,
+      getters: true
     },
     // prevents virtuals from creating duplicate of _id as `id`
     id: false
