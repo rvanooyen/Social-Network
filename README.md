@@ -8,4 +8,3 @@
 
 * Github page:
 * https://github.com/rvanooyen/Social-Network.git
-* 
